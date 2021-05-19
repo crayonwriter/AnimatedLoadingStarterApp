@@ -10,10 +10,15 @@
     tools:showIn="@layout/activity_main">
 
     <RadioGroup
-        android:layout_width="match_parent"
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="321dp">
+        android:layout_marginTop="321dp"
+        android:layout_marginBottom="118dp"
+        app:layout_constraintBottom_toTopOf="@+id/custom_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/radioButton"
@@ -45,14 +50,14 @@
     <com.udacity.LoadingButton
         android:id="@+id/custom_button"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_margin="20dp"
-        tools:text="@string/download_button"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:text="@string/download_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
