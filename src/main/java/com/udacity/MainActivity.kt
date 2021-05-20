@@ -33,7 +33,12 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
 
         custom_button.setOnClickListener {
-            download()
+            when (radioGroup.checkedRadioButtonId) {
+                R.id.glideRadioButton -> download("https://github.com/bumptech/glide")
+                R.id.loadappRadioButton -> download("https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter")
+                R.id.retrofitRadioButton -> download("https://github.com/square/retrofit")
+            }
+            //download()
         }
     }
 
@@ -43,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun download() {
+    private fun download(URL: String) {
         val request =
             DownloadManager.Request(Uri.parse(URL))
                 .setTitle(getString(R.string.app_name))
