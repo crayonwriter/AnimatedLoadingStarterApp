@@ -36,8 +36,12 @@ class LoadingButton @JvmOverloads constructor(
     }
 
     init {
+        isClickable = true
     }
 
+    override fun performClick(): Boolean {
+        return super.performClick()
+    }
     override fun onDraw(canvas: Canvas?) {
 
         super.onDraw(canvas)
