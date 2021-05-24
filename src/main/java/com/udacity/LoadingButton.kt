@@ -41,6 +41,7 @@ class LoadingButton @JvmOverloads constructor(
 
     override fun performClick(): Boolean {
         return super.performClick()
+        //todo: When clicked, the button should begin animation
     }
     override fun onDraw(canvas: Canvas?) {
 
